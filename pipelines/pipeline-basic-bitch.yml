@@ -1,0 +1,19 @@
+## at Xandr we like to structure our pipeline configurations as such
+# resource_types - for our custom resource type needs
+# resources
+# Jobs - plans and tasks with inputs (gets) and/or outputs(puts)
+
+resources:
+- name: resource_basic
+  type: git
+  source:
+    url: https://stash.corp.appnexus.com/scm/~jnormand/concourse_tutorial_snubs.git
+    branch: master
+
+jobs:
+- name: job_uname_script
+  public: true
+  plan:
+  - get: resource_basic
+  - task: basic_script
+    file: resource_basic/resources/task_basic_cmd.yml
