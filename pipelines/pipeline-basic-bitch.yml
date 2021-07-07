@@ -16,4 +16,4 @@ jobs:
   plan:
   - get: resource_basic
   - task: basic_script
-    file: ./resources/task_basic_cmd.yml
+    file: resources/task_basic_cmd.yml
