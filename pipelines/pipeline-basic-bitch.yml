@@ -15,5 +15,6 @@ jobs:
   public: true
   plan:
   - get: resource_basic
+    trigger: true
   - task: basic_script
     file: resource_basic/resources/task_basic_cmd.yml
