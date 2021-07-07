@@ -15,4 +15,4 @@ inputs:
   - name: resource_basic
 
 run:
-  path: ./resources/task_basic_cmd.sh
+  path: resource_basic/task_basic_cmd.sh
