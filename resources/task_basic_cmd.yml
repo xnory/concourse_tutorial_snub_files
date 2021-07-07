@@ -12,7 +12,7 @@ inputs:
   # we do not need to specific which directory in our local file system to fetch the resources from
   # so no need for this syntax: fly execute -i resources=. or fly execute -i resources=../resources
   # this is because the directory that we are in matches the name of the resource path.
-  - name: resources
+  - name: resource_basic
 
 run:
   path: ./resources/task_basic_cmd.sh
