@@ -34,8 +34,9 @@ jobs:
       outputs:
         - name: script-file
 
-      run: 
-        path: resource_basic/resources/task_create_script_file.sh
+      run:
+        dir: resource_basic/resources/task_create_script_file.sh
+        path: sh
 
   # TASK: take the input of a driectory and a script and run it within this stages script.
   - task: execute-script
@@ -50,4 +51,5 @@ jobs:
         - name: script-file
       
       run:
-        path: resource-basic/resources/task_run_autogen_script.sh
+        dir: resource-basic/resources/task_run_autogen_script.sh
+        path: sh
