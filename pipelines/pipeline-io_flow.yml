@@ -17,37 +17,37 @@ jobs:
   - get: resource_basic
     trigger: true
 
-    # TASK:execute a script to create a directory and create a sh file inside
-    # pass the output to the next step/TASK 
-    - task: create-dir-and-script
-      config:
-        platform: linux
-        image_resource:
-          type: dokcer-image
-          source: {repository: busybox}
+  # TASK:execute a script to create a directory and create a sh file inside
+  # pass the output to the next step/TASK 
+  - task: create-dir-and-script
+    config:
+      platform: linux
+      image_resource:
+        type: dokcer-image
+        source: {repository: busybox}
 
-        inputs: 
-          -name: resource-basic
-        
-        # seems we do not need to be too specific with these 
-        # names here as long as we declare and are consitent with refs
-        outputs:
-          -name: script-file
+      inputs: 
+        -name: resource-basic
+      
+      # seems we do not need to be too specific with these 
+      # names here as long as we declare and are consitent with refs
+      outputs:
+        -name: script-file
 
-        run: 
-          path: resource_basic/resources/task_create_script_file.sh
+      run: 
+        path: resource_basic/resources/task_create_script_file.sh
 
-    # TASK: take the input of a driectory and a script and run it within this stages script.
-    - task: execute-script
-      config:
-        platform: linux
-        image_resource:
-          type: dokcer-image
-          source: {repository: busybox}
+  # TASK: take the input of a driectory and a script and run it within this stages script.
+  - task: execute-script
+    config:
+      platform: linux
+      image_resource:
+        type: dokcer-image
+        source: {repository: busybox}
 
-        inputs:
-          - name: resource-basic
-          - name: script-file
-        
-        run:
-          path: resource-basic/resources/task_run_autogen_script.sh
+      inputs:
+        - name: resource-basic
+        - name: script-file
+      
+      run:
+        path: resource-basic/resources/task_run_autogen_script.sh
