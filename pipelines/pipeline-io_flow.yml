@@ -27,12 +27,12 @@ jobs:
         source: {repository: busybox}
 
       inputs: 
-        -name: resource-basic
+        - name: resource-basic
       
       # seems we do not need to be too specific with these 
       # names here as long as we declare and are consitent with refs
       outputs:
-        -name: script-file
+        - name: script-file
 
       run: 
         path: resource_basic/resources/task_create_script_file.sh
