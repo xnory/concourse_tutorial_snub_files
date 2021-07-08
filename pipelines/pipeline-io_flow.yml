@@ -27,7 +27,7 @@ jobs:
         source: {repository: busybox}
 
       inputs: 
-        - name: resource-basic
+        - name: resource_basic
       
       # seems we do not need to be too specific with these 
       # names here as long as we declare and are consitent with refs
@@ -46,7 +46,7 @@ jobs:
         source: {repository: busybox}
 
       inputs:
-        - name: resource-basic
+        - name: resource_basic
         - name: script-file
       
       run:
